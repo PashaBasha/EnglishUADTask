@@ -295,3 +295,26 @@ if (ischrome) {
   ssc_addEvent("mousewheel", ssc_wheel);
   ssc_addEvent("load", ssc_init)
 }
+
+
+// function hideBlock() {
+//       var block = $('#descripBlock1');
+  
+//       if($('window').scrollTop()>= 210) {
+//         block.hide();
+//         alert('asdasasdads')
+//       }
+//       else {
+//         block.show();
+//       }
+//     }
+//     $(window).scroll(hideBlock);
+  
+$(window).scroll(function() {
+  if ($(this).scrollTop() > 800) {
+    $('#descripBlock1').hide('slow')
+      }
+      else {
+        $('#descripBlock1').show('slow')
+      }
+  });

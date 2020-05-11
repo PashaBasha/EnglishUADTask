@@ -981,6 +981,21 @@ ul.address {
   background-color: gray;
   padding: 20px;
 }
+
+#descrpText {
+  font-size: 16px;
+  color: black;
+  resize: none;
+  width: 50%;
+ 
+}
+
+.descripBlockWrapper {
+  display: flex;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+}
+
 /*Presets*/
 
 
