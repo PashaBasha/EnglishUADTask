@@ -20,13 +20,69 @@
   <link rel="shortcut icon" href="images/favicon.ico">
 </head><!--/head-->
 
-<body>
+<body> 
 
   <!--.preloader-->
-  <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div>
+  <!-- <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div> -->
+<div class="overlayPreloder">
+  <div class="cssload-loader">
+    <div class="cssload-inner cssload-one"></div>
+    <div class="cssload-inner cssload-two"></div>
+    <div class="cssload-inner cssload-three"></div>
+  </div>
+</div>
+  
   <!--/.preloader-->
 
-  <header id="home">
+  <header id="home" >
+    <div class="descripBlock" id="descripBlock0" data-scroll="top">
+      <div class="buttonDescr">Показати більше</div>
+      <div class="descripBlockActive">
+      <p class="descriptionElement">
+     Знизу ми бачимо слайдер, на якому показуються заголовки про компанію
+      </p>
+      <div class="descripBlockWrapper">
+        <div class="imgBlockDesc">
+     <img  class = "descripImg" src="images/imgDEsrp/sliderdesc.jpg" alt="">
+    </div>
+    
+<textarea name="" class="descrpText" cols="30" rows="10">
+Слайдер це набір картинок які змінюються при натисканні на кнопку , або ж через певний проміжок часу автоматично. В нашому випадку ми змінюємо  opacity нашої картинки в css стилях.
+На текст в нас застосованні анімації наприклад <p class="animated fadeInRightBig"></p> Які спрацьовують і ми бачимо гарне появлення тексту яке заданно в css стилях . Також можна робити слайдер 
+в якого буде горизонтальна анімація переміщення зображень 
+  Script type = "text / javascript">
+  $ (Document) .ready (function () {
+   $ ( ". Slider"). Each (function () {// обробляємо кожен слайдер
+    var obj = $ (this);
+    $ (Obj) .append ( "<div class = 'nav'> </ div>");
+    $ (Obj) .find ( "li"). Each (function () {
+     $ (Obj) .find ( ". Nav"). Append ( "<span rel = '" + $ (this) .index () + "'> </ span>"); // додаємо блок навігації
+     $ (This) .addClass ( "slider" + $ (this) .index ());
+    });
+    $ (Obj) .find ( "span"). First (). AddClass ( "on"); // робимо активним перший елемент меню
+   });
+  });
+  function sliderJS (obj, sl) {// slider function
+   var ul = $ (sl) .find ( "ul"); // знаходимо блок
+   var bl = $ (sl) .find ( "li.slider" + obj); // знаходимо будь-який з елементів блоку
+   var step = $ (bl) .width (); // ширина об'єкта
+   $ (Ul) .animate ({marginLeft: "-" + step * obj}, 500); // 500 це швидкість перемотування
+  }
+  $ (Document) .on ( "click", ".slider .nav span", function () {// slider click navigate
+   var sl = $ (this) .closest ( ". slider"); // знаходимо, в якому блоці був клік
+   $ (Sl) .find ( "span"). RemoveClass ( "on"); // прибираємо активний елемент
+   $ (This) .addClass ( "on"); // робимо активним поточний
+   var obj = $ (this) .attr ( "rel"); // дізнаємося його номер
+   sliderJS (obj, sl); // слайд
+   return false;
+  });
+  </ Script>
+
+</textarea>
+    </div>
+  </div>
+
+    </div>
     <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
         <div class="item active" style="background-image: url(images/slider/3.jpg)">
@@ -69,9 +125,12 @@
           Меню яке дозволить швидко повернутись до потрібного пункту і ознайомитись з інформацією
         </p>
         <div class="descripBlockWrapper">
-       <img  class = "descripImg" src="images/imgDEsrp/menu.jpg" alt="">
+          <div class="imgBlockDesc">
+            <img  class = "descripImg" src="images/imgDEsrp/menu.jpg" alt="">
+          </div>
+       
       
-<textarea name="" id="descrpText" cols="30" rows="10">
+<textarea name="" class="descrpText">
   Створюється меню за допомогою списку <ul class="nav navbar-nav navbar-right">  в якому в нас є <li class="scroll"> та <a></a> елементи. 
  <a></a>   елемент  має посилання на потрібний розділ нашого сайту наприклад  <a href="#services"> Наші цінності</a> при кліку на який користувач перейде до потрібного розділо нашого сайту
 </textarea>
@@ -114,11 +173,6 @@
             <font size="3"><p>Вам необхіднo, щоб співробітники Вашої компанії  впевнено спілкувалися англійською для цілей бізнесу? </p>
             <p>Ми забезпечимо Ваших співробітників релевантним та інтерактивним навчанням задля ефективної комунікації  англійською.</p>
       <p>Наші програми навчання розроблені  з урахуванням тільки визнаних і сертифікованих методик і ось як ми досягаємо результатів:</p></font>
-      <p class="descriptionElement">
-        Цей інтерактивний елемент ⇛  використовуємо для закриття певного болю користувачів.Як що в користовача є проблема що його співробітники не знають англійської то в данному елементі ми показуємо вирішення цієї проблеми.
-        Справої сторони ми бачемо анімованні пункти  які ми використовуємо для досягнення данної мети та вирішення проблеми користувача.
-        Це дає користувачу можливість побачити як саме буде відбуватись вирешння його задачі , а також показує що ви справді маєте чіткий план дій.⇛
-      </p>
           </div>
         </div>
         <div class="col-sm-6">
@@ -163,6 +217,27 @@
         </div>
       </div>
     </div>
+    <div class="descripBlock" id="descripBlock0" data-scroll="top">
+      <div class="buttonDescr">Показати більше</div>
+      <div class="descripBlockActive">
+      <p class="descriptionElement">
+        Цей інтерактивний елемент ⇛  використовуємо для закриття певного болю користувачів.Як що в користовача є проблема що його співробітники не знають англійської то в данному елементі ми показуємо вирішення цієї проблеми.
+        Справої сторони ми бачемо анімованні пункти  які ми використовуємо для досягнення данної мети та вирішення проблеми користувача.
+        Це дає користувачу можливість побачити як саме буде відбуватись вирешння його задачі , а також показує що ви справді маєте чіткий план дій.⇛
+      </p>
+      <div class="descripBlockWrapper">
+        <div class="imgBlockDesc">
+     <img  class = "descripImg" src="images/imgDEsrp/progress.jpg" alt="">
+    </div>
+    
+<textarea name="" class="descrpText">
+Виконуэться умова , як що блок стає видимим користувачу if(visable){} , запускаэться функція яка додає css стиль $(this).css який заспускає анімацію яка повільно заповнює блок іншим кольором. 
+Таким чином в нас виходить гарна анімація заповнення блоку.
+</textarea>
+    </div>
+  </div>
+
+    </div>
   </section><!--/#about-us-->
   
   <section id="services">
@@ -170,10 +245,25 @@
       <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="row">
           <div class="text-center col-sm-8 col-sm-offset-2">
-            <h2>Наші Цінності </h2>  
-            <p class="descriptionElement">
-              Тут ми перелічуємо всі переваги компанії над конкурентами . За допомогою цього блоку ми відсікаємо в користувача якісь певні сумніви стосовно нашої компанії ⇓
-            </p>          
+            <h2>Наші Цінності </h2>          
+            <div class="descripBlock" id="descripBlock0" data-scroll="top">
+              <div class="buttonDescr">Показати більше</div>
+              <div class="descripBlockActive">
+              <p class="descriptionElement">
+                Тут ми перелічуємо всі переваги компанії над конкурентами . За допомогою цього блоку ми відсікаємо в користувача якісь певні сумніви стосовно нашої компанії 
+              </p>
+              <div class="descripBlockWrapper">
+                <div class="imgBlockDesc">
+             <img  class = "descripImg" src="images/imgDEsrp/hover1.jpg" alt="">
+            </div>
+            
+        <textarea name="" class="descrpText">
+  Просто звичайний css Hover ефект 
+        </textarea>
+            </div>
+          </div>
+        
+            </div>
           </div>
         </div> 
       </div>
@@ -234,6 +324,21 @@
 
   <section id="portfolio">
     <div class="container">
+      <div class="descripBlock" id="descripBlock0" data-scroll="top">
+        <div class="buttonDescr">Показати більше</div>
+        <div class="descripBlockActive" style="padding-bottom: 100px;">
+        <div class="descripBlockWrapper">
+          <div class="imgBlockDesc">
+       <img  class = "descripImg" src="images/imgDEsrp/hoverWowjqr.jpg" alt="">
+      </div>
+      
+  <textarea name="" class="descrpText">
+Використовуємо бібліотеку jquery wow де  data-wow-duration="1000ms" швидкість відтворення анімації в мілісекундах 
+  </textarea>
+      </div>
+    </div>
+  
+      </div>
       <div class="row">       
       </div> 
     </div>
@@ -471,25 +576,103 @@
 
 
   <section id="contact">
-    <p class="descriptionElement">
-      Розміщуємо мапу і місце розташування нашого закладу чи офісу. Це підвищує довіру користувачів він розуміє\ що такий заклад справді фізично існує. Також це дає можливість ознайомитись з місцем розташуванням закладу ⇓
-       </p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2571.547179212685!2d24.005406015883445!3d49.869750136916224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473addb4f14007bf%3A0xcf08a2d16f6bf2f3!2z0KPQutGA0LDQuNC90YHQutCw0Y8g0LDQutCw0LTQtdC80LjRjyDQutC90LjQs9C-0L_QtdGH0LDRgtCw0L3QuNGP!5e0!3m2!1sru!2sua!4v1588602162360!5m2!1sru!2sua"  width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+    <div class="descripBlock" id="descripBlock0" data-scroll="top">
+      <div class="buttonDescr">Показати більше</div>
+      <div class="descripBlockActive">
+      <p class="descriptionElement">
+        Розміщуємо мапу і місце розташування нашого закладу чи офісу.
+         Це підвищує довіру користувачів він розуміє\ що такий заклад справді фізично існує. Також це дає можливість ознайомитись з місцем розташуванням закладу 
+      </p>
+      <div class="descripBlockWrapper">
+        <div class="imgBlockDesc">
+     <img  class = "descripImg" src="images/imgDEsrp/map.jpg" alt="">
+    </div>
     
-
-
+<textarea name="" class="descrpText">
+Розмішення карти просто шляхом вставлення вже згенерованого фрагменту карти  за допомогою src
+</textarea>
+    </div>
+  </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2571.547179212685!2d24.005406015883445!3d49.869750136916224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473addb4f14007bf%3A0xcf08a2d16f6bf2f3!2z0KPQutGA0LDQuNC90YHQutCw0Y8g0LDQutCw0LTQtdC80LjRjyDQutC90LjQs9C-0L_QtdGH0LDRgtCw0L3QuNGP!5e0!3m2!1sru!2sua!4v1588602162360!5m2!1sru!2sua"  width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
     
     <div id="contact-us" class="parallax">
 
+      
+        <div class="descripBlock" id="descripBlock0" data-scroll="top">
+          <div class="buttonDescr">Показати більше</div>
+          <div class="descripBlockActive">
+          <p class="descriptionElement">
+            Заклик до дії - елемент комерційного веб-сайту, який забезпечує продуктивну взаємодію з аудиторією. 
+            Це клікабельні кнопки, спливаючі форми, текстові посилання, банери, фіксовані заголовки, які залучають користувачів навіть в момент зниження концентрації уваги.
+            Тут ми використовуємо фішку яка точно має зацікавити нашого користувача , а саме пропонуємо перше пробне безкоштовне заняття. 
+            В такому випадку користувач нічим не ризикує , і така акція даєє дуже велику конверсію і багато лідів.На пробному занняті значно легше переконати користувача для продовження співпраці , і замовлення наших платний послуг.
+            Форма зворотнього звязку дає змогу користувачу швидко сформолювати своє питання і отримати зворотню відповідь. Форма зворотнього звязку  зараз вже є просто необхідним елементом на лендінгу.
+          </p>
+          <div class="descripBlockWrapper">
+            <div class="imgBlockDesc">
+         <img  class = "descripImg" src="images/imgDEsrp/contact form.jpg" alt="">
+         <p>JS код</p>
+         <img  class = "descripImg" src="images/imgDEsrp/formJs.jpg" alt="">
+        </div>
+        
+    <textarea name="" class="descrpText">
+     
+      Створюэмо форму за допомогою тегу form  а поля форми за допомогою тегу <input type ='тут вказуэмо тип нашого інпуту'>. type дозволяє вибрати тип інпуту , наприклад тип pasword 
+      захищений і  замінює ваш пароль зірочками , а також з нього не можна скопіювати ваш пароль. Додаткові бібліотеки можуть здійснювати автоматичну валідацію 
+      інпуту або ж мати вбудоовані маски які облегшують введення ваших данних
+       placeholder відповідає за текст який
+       користувач буде бачити в полі input наприклад "введіть номер телефону" або 'ваш емейл' це допомагає користувачу зрозуміти які данні куди потрібнно вводити 
 
-      <div class="container">
-        <p class="descriptionElement">
-          Заклик до дії - елемент комерційного веб-сайту, який забезпечує продуктивну взаємодію з аудиторією. 
-          Це клікабельні кнопки, спливаючі форми, текстові посилання, банери, фіксовані заголовки, які залучають користувачів навіть в момент зниження концентрації уваги.
-          Тут ми використовуємо фішку яка точно має зацікавити нашого користувача , а саме пропонуємо перше пробне безкоштовне заняття. 
-          В такому випадку користувач нічим не ризикує , і така акція даєє дуже велику конверсію і багато лідів.На пробному занняті значно легше переконати користувача для продовження співпраці , і замовлення наших платний послуг.
-          Форма зворотнього звязку дає змогу користувачу швидко сформолювати своє питання і отримати зворотню відповідь. Форма зворотнього звязку  зараз вже є просто необхідним елементом на лендінгу.
-        </p>
+       Так виглядає наш код php 
+      <?php
+      //Як  що форма відправленна 
+      if(isset($_POST['submit'])) {
+     //Перевірка правельності заповннея форми імя 
+      if(trim($_POST['contactname']) == '') {
+      $hasError = true;
+      } else {
+      $name = trim($_POST['contactname']);
+      }
+     //Перевірка поля тема 
+      if(trim($_POST['subject']) == '') {
+      $hasError = true;
+      } else {
+      $subject = trim($_POST['subject']);
+      }
+     //Перевірка правильності заповнення форми емейл
+      if(trim($_POST['email']) == '')  {
+      $hasError = true;
+      } else if (!eregi("^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$", trim($_POST['email']))) {
+      $hasError = true;
+      } else {
+      $email = trim($_POST['email']);
+      }
+     //Перевірка чи користувач заповнив поле для повідомлення
+      if(trim($_POST['message']) == '') {
+      $hasError = true;
+      } else {
+      if(function_exists('stripslashes')) {
+      $comments = stripslashes(trim($_POST['message']));
+      } else {
+      $comments = trim($_POST['message']);
+      }
+      }
+     //Як що немає помилок ми відправляємо форму на електронну адресу 
+      if(!isset($hasError)) {
+      $emailTo = 'pashabasha@@@@@@'; //Сюди вводимо нашу електронну адресу 
+      $body = "Name: $name \n\nEmail: $email \n\nSubject: $subject \n\nComments:\n $comments";
+      $headers = 'From: My Site <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
+     mail($emailTo, $subject, $body, $headers);
+      $emailSent = true;
+      }
+      }
+      ?>
+    </textarea>
+        </div>
+      </div>
+        </div>
+        <div class="container">
         <div class="row">
           <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms" id="contact_1">
             <h2>Замовити перше безкоштовне заняття</h2>
@@ -533,6 +716,32 @@
       </div>
     </div>        
   </section><!--/#contact-->
+  
+  <div class="container">
+  <div class="descripBlock" id="descripBlock3" data-scroll="top">
+    <div class="buttonDescr">Показати більше</div>
+    <div class="descripBlockActive">
+    <p class="descriptionElement">
+      Loader - це анімований інтерактивний елемент, який інформує користувача про процес завантаження контенту. Оскільки процес займає деякий час, таким чином система показує, що працює. 
+      Він грає важливу роль для зручності використання. Більш того, стильна анімація і графіка можуть додати красу і задоволення в процес.
+    </p>
+    <div class="descripBlockWrapper">
+      <div class="imgBlockDesc">
+        <img  class = "descripImg" src="images/imgDEsrp/loaderJs.jpg" alt="">
+        <img  class = "descripImg" src="images/imgDEsrp/loadercss1.jpg" alt="">
+        <p>Частинка анімації лоадеру</p>
+        <img  class = "descripImg" src="images/imgDEsrp/loadercss2.jpg" alt="">
+  </div>
+  
+<textarea name="" class="descrpText">
+  Лоадер зробленний з використанням зацикленних анімацій. Лоадер працює доки наш сейт весь не загрузиться для цого ми використовуємо функцію $(window).load(function () 
+  яка після загрузки сторінки видаляє лоадер і клас елементу body . Використав setTimeout що лоадер працював трішки довше щоб його можна було розгледіти.
+</textarea>
+  </div>
+</div>
+
+
+  
   <footer id="footer">
     <div class="footer-bottom">
       <div class="container">
